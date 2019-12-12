@@ -1,6 +1,6 @@
 {
   "name": "queueable-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple queuing functionality with event emitter async call.",
   "keywords": [
     "async-queue",
