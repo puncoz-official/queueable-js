@@ -42,7 +42,6 @@
     "node_modules",
     "dist",
     "examples",
-    "src/**/*.spec.ts",
-    "rollup.config.js"
+    "src/**/*.test.ts"
   ]
 }

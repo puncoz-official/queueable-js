@@ -137,7 +137,7 @@
   "linterOptions": {
     "exclude": [
       "node_modules/**/*.ts",
-      "src/**/*.spec.ts"
+      "src/**/*.test.ts"
     ]
   }
 }

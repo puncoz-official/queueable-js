@@ -1,6 +1,6 @@
 {
-  "name": "async-queue",
-  "version": "1.0.0",
+  "name": "queueable-js",
+  "version": "1.0.2",
   "description": "Simple queuing functionality with event emitter async call.",
   "keywords": [
     "async-queue",
@@ -11,7 +11,7 @@
   ],
   "author": "Puncoz Nepal <info@puncoz.com>",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/main.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -25,13 +25,14 @@
     "clean": "rimraf dist yarn-error.log*",
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.{ts}'",
     "lint:fix": "yarn lint --fix",
-    "start": "rollup -c --watch",
-    "build": "yarn clean && rollup -c",
+    "webpack": "webpack --config ./webpack.config.js --progress",
+    "start": "webpack --env.NODE_ENV=development --watch",
+    "build": "yarn clean && yarn webpack --env.NODE_ENV=production",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test && yarn lint",
     "preversion": "yarn lint",
-    "version": "git add -a",
-    "postversion": "git push && git push --tags"
+    "version": "git add .",
+    "postversion": "git push -u upstream && git push upstream -u --tags"
   },
   "husky": {
     "hooks": {
@@ -40,26 +41,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/puncoz/async-queue.git"
+    "url": "git+https://github.com/puncoz-official/queueable-js.git"
   },
   "bugs": {
-    "url": "https://github.com/puncoz/async-queue/issues"
+    "url": "https://github.com/puncoz-official/queueable-js/issues"
   },
-  "homepage": "https://github.com/puncoz/async-queue#readme",
+  "homepage": "https://github.com/puncoz-official/queueable-js#readme",
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
     "rimraf": "^3.0.0",
-    "rollup": "^1.27.11",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-typescript": "^1.0.1",
     "ts-jest": "^24.2.0",
+    "ts-loader": "^6.2.1",
     "tslint": "^5.20.1",
     "tslint-microsoft-contrib": "^6.2.0",
-    "typescript": "^3.7.3"
-  }
+    "typescript": "^3.7.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {}
 }

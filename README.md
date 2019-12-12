@@ -7,5 +7,42 @@ Forked and Inspired from [async-function-queue](https://github.com/pgte/async-fu
 ## Installation
 
 ```sh
-$ yarn add 
+$ yarn add queueable-js
+
+or,
+$ npm install queueable-js
+```
+
+## Usage
+
+```js
+import Queue from "queueable-js"
+
+const concurrency = 2
+
+// create a queue, defining concurrency
+const queue = Queue(concurrency)
+
+// push a function that accepts a callback
+// as sole argument
+queue.push(function(cb) {
+  setTimeout(cb, 1000)
+});
+```
+
+## Events
+```js
+// Some emitted events
+ 
+queue.on('entry', function() {
+  console.log('starting to execute function')
+})
+ 
+queue.on('exit', function() {
+  console.log('finished executing function')
+})
+
+queue.on('drain', function() {
+  console.log('queue has drained')
+})
 ```
