@@ -87,7 +87,7 @@
     ],
     "quotemark":                         [
       true,
-      "single",
+      "double",
       "jsx-double"
     ],
     "radix":                             true,

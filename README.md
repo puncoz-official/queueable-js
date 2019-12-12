@@ -33,16 +33,18 @@ queue.push(function(cb) {
 ## Events
 ```js
 // Some emitted events
+
+// queue.event() will returns an instance of EventEmitter
  
-queue.on('entry', function() {
+queue.event().on('entry', function() {
   console.log('starting to execute function')
 })
  
-queue.on('exit', function() {
+queue.event().on('exit', function() {
   console.log('finished executing function')
 })
 
-queue.on('drain', function() {
+queue.event().on('drain', function() {
   console.log('queue has drained')
 })
 ```
