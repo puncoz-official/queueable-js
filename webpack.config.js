@@ -1,6 +1,6 @@
 const { resolve } = require("path")
 
-const config = {
+module.exports = env => ({
     entry: {
         main: resolve("./src/index.ts"),
     },
@@ -17,11 +17,9 @@ const config = {
         ],
     },
 
-    mode: process.env.NODE_ENV || "development",
+    mode: env.NODE_ENV || "development",
 
     resolve: {
         extensions: [".ts"],
     },
-}
-
-module.exports = config
+})
