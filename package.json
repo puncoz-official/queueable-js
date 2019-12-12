@@ -26,7 +26,12 @@
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.{ts}'",
     "lint:fix": "yarn lint --fix",
     "start": "rollup -c --watch",
-    "build": "yarn clean && rollup -c"
+    "build": "yarn clean && rollup -c",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test && yarn lint",
+    "preversion": "yarn lint",
+    "version": "git add -a",
+    "postversion": "git push && git push --tags"
   },
   "husky": {
     "hooks": {
