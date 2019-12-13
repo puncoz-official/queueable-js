@@ -1,5 +1,9 @@
 # async-queue
 
+[![Version](https://img.shields.io/npm/v/queueable-js?logo=npm)](https://www.npmjs.com/package/queueable-js)
+[![Build](https://img.shields.io/travis/puncoz-official/queueable-js?logo=travis)](https://travis-ci.org/puncoz-official/queueable-js)
+[![Twitter Follow](https://img.shields.io/twitter/follow/PuncozNepal?label=Follow&style=social)](https://twitter.com/PuncozNepal)
+
 Simple queuing functionality with event emitter async call.
 
 Forked and Inspired from [async-function-queue](https://github.com/pgte/async-function-queue)
