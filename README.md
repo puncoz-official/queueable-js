@@ -1,4 +1,4 @@
-# async-queue
+# queueable-js
 
 [![Version](https://img.shields.io/npm/v/queueable-js?logo=npm)](https://www.npmjs.com/package/queueable-js)
 [![Build](https://img.shields.io/travis/puncoz-official/queueable-js?logo=travis)](https://travis-ci.org/puncoz-official/queueable-js)
