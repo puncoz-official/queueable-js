@@ -11,9 +11,7 @@
   ],
   "author": "Puncoz Nepal <info@puncoz.com>",
   "license": "MIT",
-  "main": "dist/main.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
     "node": ">=10",

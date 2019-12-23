@@ -1,11 +1,29 @@
-const { resolve } = require("path")
+const { resolve, join } = require("path")
+
+const ROOT = __dirname
+const DESTINATION = join(ROOT, "/dist")
 
 module.exports = env => ({
+    mode: env.NODE_ENV || "development",
+
+    devtool: env.NODE_ENV === "production" ? false : "inline-source-map",
+
     entry: {
-        main: resolve("./src/index.ts"),
+        main: resolve(ROOT + "/src/index.ts"),
     },
 
-    devtool: "inline-source-map",
+    output: {
+        filename: "index.js",
+        libraryTarget: "umd",
+        library: "queueable-js",
+        path: DESTINATION,
+    },
+
+    context: ROOT,
+
+    resolve: {
+        extensions: [".ts"],
+    },
 
     module: {
         rules: [
@@ -15,11 +33,5 @@ module.exports = env => ({
                 exclude: [/node_modules/],
             },
         ],
-    },
-
-    mode: env.NODE_ENV || "development",
-
-    resolve: {
-        extensions: [".ts"],
     },
 })
