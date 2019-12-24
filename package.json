@@ -11,8 +11,11 @@
   ],
   "author": "Puncoz Nepal <info@puncoz.com>",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "distz"
+  ],
   "engines": {
     "node": ">=10",
     "npm": ">=6"
